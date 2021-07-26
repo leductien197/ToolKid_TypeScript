@@ -6,7 +6,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { SCREEN_NAME } from './ScreenName';
 import LoginScreen from '../screens/auth/layout/LoginScreen';
 import RegisterScreen from '../screens/auth/layout/RegisterScreen';
-
+import ForgotPasswordScreen from '../screens/auth/layout/ForgotPasswordScreen';
+import ProductDetailScreen from '../screens/product/layout/ProductDetailScreen';
+import { ScrollView } from 'react-native';
 
 const Stack = createStackNavigator();
 
@@ -14,11 +16,14 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
+        <Stack.Screen name={SCREEN_NAME.LoginScreen} component={LoginScreen} />
+        <Stack.Screen name={SCREEN_NAME.ProductDetailScreen} component={ProductDetailScreen} />
         <Stack.Screen
           name={SCREEN_NAME.RegisterScreen}
           component={RegisterScreen}
         />
-        <Stack.Screen name={SCREEN_NAME.LoginScreen} component={LoginScreen} />
+
+        <Stack.Screen name={SCREEN_NAME.ForgotPasswordScreen} component={ForgotPasswordScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
